@@ -1,0 +1,179 @@
+/*General styling*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color:#E9ECEF;
+    outline: 1px black;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body{
+    background-color: #212529;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1; 
+    flex-direction: column;
+}
+
+
+/*Nav bar*/
+.nav {
+    background-color: #212529;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    color: #fff;
+    left: 0; /* Align the nav to the left */
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav-items {
+    margin-left: auto; /* Push the navigation items to the right */
+    padding: 15px; /* Adjust padding as needed */
+    display: flex;
+}
+
+.nav a {
+    height: 20px;
+    padding:15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-items>*:hover, .nav a:hover {
+    transform: scale(1.2);
+    color: #ADB5BD;
+}
+
+
+/*dark light mode*/
+.mode-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    left: 1%;
+    position: relative;
+    outline: none;
+}
+
+.mode-toggle .sun {
+    display: none; /* Initially hide the moon */
+    color: #212529
+}
+
+.mode-toggle .moon {
+    display: block; /* Show the sun by default */
+}
+
+/* When in dark mode */
+body.light-mode .mode-toggle .sun {
+    display: block; /* Show the moon in dark mode */
+}
+
+body.light-mode .mode-toggle .moon {
+    display: none; /* Hide the sun in  mode */
+}
+
+/*main*/
+
+.main{
+    display:flex;
+    align-items: center;
+}
+
+.card_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.card {
+    width: 80%;
+    height:auto;
+    border: 1px solid #181c20;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the card content */
+.card-content {
+    align-items: center;
+    padding: 15px;
+}
+
+/* Styling for the card title */
+.card-content h1 {  
+    margin: 0;
+}
+
+/* Styling for the card description */
+.card-content div {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* Styling for the "Learn More" link */
+.card-content a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Hover effect for the link */
+.card-content a:hover {
+    background: #0056b3;
+}
+
+
+ 
+/*Footer*/
+.footer {
+    position: fixed; /* Use fixed positioning */
+    bottom: 0; /* Place the footer at the bottom */
+    left: 0; /* Adjust the left position if needed */
+    width: 100%; /* Take the full width of the viewport */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    background: #181c20;
+    padding: 5px;
+    /* Assuming it's a flex container, set flex-direction */
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-items{
+    display:flex;
+    justify-content: space-between; /* Distributes space between elements */
+    align-items: center; /* Aligns items vertically */
+
+}
+
+.contact{
+    display: flex;
+    list-style-type: none;
+}
+
+.contact>*:hover, .contact a:hover {
+    transform: scale(1.2);
+    color: #ADB5BD;
+}
+
+.contact li{
+    padding: 10%;
+}
+
+.kont {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 23px;
+}
