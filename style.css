@@ -11,17 +11,20 @@
 
 body{
     background-color: #212529;
+    overflow-y: auto; /* Enable vertical scroll within the list */
 }
 
 .container {
     display: flex;
     flex-grow: 1; 
     flex-direction: column;
+
 }
 
 
 /*Nav bar*/
 .nav {
+    border-bottom: 10px;
     background-color: #212529;
     width: 100%;
     position: fixed;
@@ -83,10 +86,6 @@ body.light-mode .mode-toggle .moon {
 
 /*main*/
 
-.main{
-    display:flex;
-    align-items: center;
-}
 
 .card_container {
     display: flex;
@@ -120,27 +119,19 @@ body.light-mode .mode-toggle .moon {
     margin: 10px 0;
 }
 
-/* Styling for the "Learn More" link */
-.card-content a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
+.to-do-list {
+    max-height: calc(50vh - 500px); /* Adjust this value as needed */
+
 }
 
-/* Hover effect for the link */
-.card-content a:hover {
-    background: #0056b3;
+.list-item{
+    padding:10px;
 }
 
-
- 
 /*Footer*/
 .footer {
-    position: fixed; /* Use fixed positioning */
-    bottom: 0; /* Place the footer at the bottom */
+    border-top:100px;
+    bottom: 100%; /* Place the footer at the bottom */
     left: 0; /* Adjust the left position if needed */
     width: 100%; /* Take the full width of the viewport */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -149,6 +140,7 @@ body.light-mode .mode-toggle .moon {
     /* Assuming it's a flex container, set flex-direction */
     display: flex;
     flex-direction: column;
+    justify-content: baseline;
 }
 
 .footer-items{

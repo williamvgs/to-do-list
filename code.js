@@ -17,6 +17,7 @@ function addTodo() {
     
     if (event.key === 'Enter' && todoInput.value !== '') { // Check if Enter key is pressed
         const listItem = document.createElement('li');
+        listItem.classList.add('list-item');
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
 
@@ -59,3 +60,6 @@ function addTodo() {
 
 // Event listener to trigger the addTodo function when Enter key is pressed
 document.getElementById('todoInput').addEventListener('keypress', addTodo);
+
+
+//footer element
