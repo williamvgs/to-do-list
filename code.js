@@ -61,5 +61,9 @@ function addTodo() {
 // Event listener to trigger the addTodo function when Enter key is pressed
 document.getElementById('todoInput').addEventListener('keypress', addTodo);
 
+document.getElementById("deleteAllButton").addEventListener("click", function() {
+    var todoList = document.getElementById("todoList");
+    todoList.innerHTML = ""; // Clears all list items
+});
 
 //footer element

@@ -1,17 +1,18 @@
 /*General styling*/
 *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    color:#E9ECEF;
-    outline: 1px black;
     list-style-type: none;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color:#E9ECEF;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    background-color: #212529;
-    overflow-y: auto; /* Enable vertical scroll within the list */
+body {
+    background: #212529;
+    display: flex;
+    flex-direction: column;
+    min-height: 200vh ;
 }
 
 .container {
@@ -85,7 +86,16 @@ body.light-mode .mode-toggle .moon {
 }
 
 /*main*/
+.main {
+    flex: 1; /* Take available space between header and footer */
+    overflow: auto; /* Enable scrolling if the content overflows */
+    margin-top: 5vh;
 
+}
+
+.content {
+    padding: 20px;
+}
 
 .card_container {
     display: flex;
@@ -121,51 +131,317 @@ body.light-mode .mode-toggle .moon {
 
 .to-do-list {
     max-height: calc(50vh - 500px); /* Adjust this value as needed */
-
+    margin: 10px;
+    padding:10px;
 }
 
 .list-item{
     padding:10px;
+    z-index: 1;
 }
 
 /*Footer*/
 .footer {
-    border-top:100px;
-    bottom: 100%; /* Place the footer at the bottom */
-    left: 0; /* Adjust the left position if needed */
-    width: 100%; /* Take the full width of the viewport */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    background: #181c20;
-    padding: 5px;
-    /* Assuming it's a flex container, set flex-direction */
     display: flex;
-    flex-direction: column;
-    justify-content: baseline;
-}
-
-.footer-items{
-    display:flex;
-    justify-content: space-between; /* Distributes space between elements */
-    align-items: center; /* Aligns items vertically */
-
+    align-items: center;
+    background: #343A40;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 1s0px;
+    position: relative;
+    justify-content: space-evenly;
+    min-height: 100px;
+    padding-left: 50px;
+    z-index: 1;
 }
 
 .contact{
+    font-size: xx-large;
+    font-weight: bolder;
+    padding-left: 100px;
+
+}
+
+.vertical-line {
+    width: 1px; /* Adjust the width of the vertical line */
+    height: 80px; /* Adjust the height of the vertical line */
+    background-color: #fff; /* Change the color as needed */
+}
+
+.items1, .items2{
+    font-weight: lighter;
+    font-size: 14px;
+    padding-right: 100px;
+    opacity: 0.4;
+}
+
+
+ul.about {
+    display: flex; /* Display 'About' items horizontally */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+ul.about li {
+    margin-right: 20px; /* Adjust spacing between 'About' items */
+}
+
+div.social {
     display: flex;
-    list-style-type: none;
+    align-items: center;
 }
 
-.contact>*:hover, .contact a:hover {
+ul.social {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display 'Social Contacts' horizontally */
+}
+
+ul.social li {
+    margin-right: 40px; /* Adjust spacing between 'Social Contacts' items */
+}
+
+
+ul.about li:hover,
+ul.social li:hover {
+    color: #fff;
+    opacity: 1;
     transform: scale(1.2);
-    color: #ADB5BD;
 }
 
-.contact li{
-    padding: 10%;
+#todoInput{
+    color: #212529;
+
 }
 
-.kont {
-    padding: 20px;
-    font-weight: bold;
-    font-size: 23px;
+#deleteAllButton{
+    color: #212529;
+
 }
+
+
+
+@media screen and (max-width: 480px) {
+    .footer {
+        flex-direction: column;
+        padding: 10px;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+    .contact {
+        padding-left: 10px;
+    }
+
+    .vertical-line {
+        width: 100%;
+        height: 1px;
+        margin: 10px 0;
+    }
+
+    .items1, .items2 {
+        padding: 10px;
+        opacity: 0.4;
+    }
+
+    .social{
+        padding: 10px;
+
+    }
+
+    ul.about, div.social {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    ul.about li, ul.social li {
+        margin-right: 5;
+        margin-bottom: 10px;
+    }
+
+}
+
+
+
+@media screen and (min-width: 481px) and (max-width: 500px) {
+    .footer {
+        flex-direction: column;
+        padding: 10px;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+
+    .contact {
+        padding-left: 10px;
+    }
+
+    .vertical-line {
+        width: 100%;
+        height: 1px;
+        margin: 10px 0;
+    }
+
+    .items1, .items2 {
+        padding: 10px;
+        opacity: 0.4;
+    }
+
+    .social{
+        padding: 10px;
+
+    }
+
+    ul.about, div.social {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    ul.about li, ul.social li {
+        margin-right: 5;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        padding: 10px;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+
+
+    .contact {
+        padding-left: 10px;
+    }
+
+    .vertical-line {
+        width: 100%;
+        height: 1px;
+        margin: 10px 0;
+    }
+
+    .items1, .items2 {
+        padding: 10px;
+        opacity: 0.4;
+    }
+
+    .social{
+        padding: 10px;
+
+    }
+
+    ul.about li, ul.social li {
+        margin-right: 5;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+    .contact {
+        padding-left: 10px;
+    }
+
+    .vertical-line {
+        width: 100%;
+        height: 1px;
+        margin: 10px 0;
+    }
+    
+    .items1, .items2 {
+        padding: 10px;
+        opacity: 0.4;
+        flex: 1; /* Allow items1 and items2 to take available space */
+    }
+
+    .social{
+        padding: 10px;
+
+    }
+
+    ul.about li, ul.social li {
+        margin-right: 5;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+    .footer {
+        display: flex;
+        align-items: center;
+        background: #343A40;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        padding: 1s0px;
+        position: relative;
+        justify-content: space-evenly;
+        min-height: 100px;
+        padding-left: 50px;
+    }
+    
+    .contact{
+        font-size: xx-large;
+        font-weight: bolder;
+        padding-left: 10px;
+    
+    }
+    
+    .vertical-line {
+        width: 1px; /* Adjust the width of the vertical line */
+        height: 80px; /* Adjust the height of the vertical line */
+        background-color: #fff; /* Change the color as needed */
+    }
+    
+    .items1, .items2{
+        font-weight: lighter;
+        font-size: 14px;
+        padding-right: 10px;
+        opacity: 0.4;
+    }
+    
+    
+    ul.about {
+        display: flex; /* Display 'About' items horizontally */
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    
+    ul.about li {
+        margin-right: 20px; /* Adjust spacing between 'About' items */
+    }
+    
+    div.social {
+        display: flex;
+        align-items: center;
+    }
+    
+    ul.social {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex; /* Display 'Social Contacts' horizontally */
+    }
+    
+    ul.social li {
+        margin-right: 40px; /* Adjust spacing between 'Social Contacts' items */
+    }
+    
+
+}
+
+
